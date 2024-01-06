@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Portfolio</title>
     <style>
@@ -15,40 +14,57 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            color: #333;
         }
         .container {
-            width: 80%;
-            max-width: 1000px;
+            width: 90%;
+            max-width: 1200px;
             background: #fff;
-            padding: 20px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-            text-align: center;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin: 20px;
         }
         .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
             padding: 20px;
         }
-        .preview {
-            width: 300px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
+        .item {
+            background: #f8f8f8;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+            border: 1px solid #e1e1e1;
         }
-        .preview:hover {
-            transform: scale(1.05);
+        .item:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
         }
         .preview img {
             width: 100%;
             height: auto;
-            border-radius: 5px;
+            display: block;
         }
-        .preview-text {
-            text-align: center;
-            margin-top: 5px;
+        .description {
+            padding: 15px;
+            text-align: left;
+            color: #333;
+        }
+        .description p {
+            margin: 0 0 10px;
+        }
+        .description a {
+            display: inline-block;
+            background: #007bff;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .description a:hover {
+            background: #0056b3;
         }
     </style>
 </head>
@@ -56,19 +72,39 @@
     <div class="container">
         <h1>Welcome to My Portfolio</h1>
         <div class="gallery">
-            <a href="https://drive.google.com/file/d/your_pdf_file_id_1/view?usp=sharing" class="preview" target="_blank">
-                <img src="path_to_preview_image1.jpg" alt="Preview of PDF 1">
-                <div class="preview-text">Flow On The Cloud</div>
-            </a>
-            <a href="https://drive.google.com/file/d/1SbHCSHGZQsOL2PerY7KeNjf2FwunWcPp/view?usp=sharing" class="preview" target="_blank">
-                <img src="MCF.png" alt="Preview of Morse Code Fight">
-                <div class="preview-text">Morse Code Fight</div>
-            </a>
-            <a href="https://drive.google.com/file/d/13lRq7p3YhrPzKGRKYy_lsZ7VuQUWlOE6/view?usp=sharing" class="preview" target="_blank">
-                <img src="FG.png" alt="Preview of Falling Graves">
-                <div class="preview-text">Falling Graves</div>
-            </a>
-            <!-- Repeat the pattern for other items -->
+            <!-- Project 1 -->
+            <div class="item">
+                <a href="https://drive.google.com/file/d/1yqArPf2a5uq37ncWWc-GS-o8gSndE4DC/view?usp=sharing" target="_blank">
+                    <img src="FOTC.png" alt="Preview of FlowOnTheCloud">
+                </a>
+                <div class="description">
+                    <p><strong>Flow On The Cloud(Work in Progress)</strong></p>
+                    <p>Flow On The Cloud is a experimental project based on VRChat, it's a VRChat world which can detect player's emotion and showing it to other players in the world. This project aims to find deeper ways for human to interact with each other in the virtual space.</p>
+                    <a href="https://drive.google.com/file/d/1yqArPf2a5uq37ncWWc-GS-o8gSndE4DC/view?usp=sharing" target="_blank">View Details</a>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="item">
+                <a href="https://drive.google.com/file/d/1SbHCSHGZQsOL2PerY7KeNjf2FwunWcPp/view?usp=sharing" target="_blank">
+                    <img src="MCF.png" alt="Preview of MorseCodeFight">
+                </a>
+                <div class="description">
+                    <p><strong>Morse Code Fight</strong></p>
+                    <p>"Morse Code Fight" is an innovative game concept where players use Morse code to control their characters in a fighting or action game. Utilizing a single button, players input commands with short and long presses corresponding to dots and dashes of Morse code. This unique control scheme not only adds a strategic depth to the gameplay but also provides an educational aspect as players learn Morse code.</p>
+                    <a href="https://drive.google.com/file/d/1SbHCSHGZQsOL2PerY7KeNjf2FwunWcPp/view?usp=sharing">View Details</a>
+                </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="item">
+                <a href="https://drive.google.com/file/d/13lRq7p3YhrPzKGRKYy_lsZ7VuQUWlOE6/view?usp=sharing" target="_blank">
+                    <img src="FG.png" alt="Preview of FallingGraves">
+                </a>
+                <div class="description">
+                    <p><strong>Falling Graves</strong></p>
+                    <p>"Falling Graves" is a one-button thrilling game set that combines three mini games which aims to create the experience centering falling graves that creates fear for players. Those three mini games each has their own way of creating the experience.</p>
+                    <a href="https://drive.google.com/file/d/13lRq7p3YhrPzKGRKYy_lsZ7VuQUWlOE6/view?usp=sharing" target="_blank">View Details</a>
+                </div>
+            </div>
         </div>
     </div>
 </body>
