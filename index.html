@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Portfolio</title>
     <style>
@@ -14,6 +15,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            color: #333;
         }
         .container {
             width: 80%;
@@ -22,44 +24,52 @@
             padding: 20px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
             border-radius: 10px;
-            border: 1px solid #d1d1d1;
             text-align: center;
         }
-        .pdf-link {
-            margin: 10px;
-            display: inline-block;
-            cursor: pointer;
-            color: #333;
-            font-size: 18px;
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px;
         }
-        .pdf-viewer {
+        .preview {
+            width: 300px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .preview:hover {
+            transform: scale(1.05);
+        }
+        .preview img {
             width: 100%;
-            height: 0;
-            overflow: hidden;
-            transition: height 0.5s ease;
-            border: none;
+            height: auto;
+            border-radius: 5px;
+        }
+        .preview-text {
+            text-align: center;
+            margin-top: 5px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Welcome to My Portfolio</h1>
-        <div class="pdf-link" onclick="showPDF('pdf1')">View PDF 1</div>
-        <div class="pdf-link" onclick="showPDF('pdf2')">View PDF 2</div>
-        <div class="pdf-link" onclick="showPDF('pdf3')">View PDF 3</div>
-        <embed id="pdf1" class="pdf-viewer" type="application/pdf" src="path_to_your_first_pdf.pdf">
-        <embed id="pdf2" class="pdf-viewer" type="application/pdf" src="path_to_your_second_pdf.pdf">
-        <embed id="pdf3" class="pdf-viewer" type="application/pdf" src="path_to_your_third_pdf.pdf">
+        <div class="gallery">
+            <a href="https://drive.google.com/file/d/your_pdf_file_id_1/view?usp=sharing" class="preview" target="_blank">
+                <img src="path_to_preview_image1.jpg" alt="Preview of PDF 1">
+                <div class="preview-text">PDF 1 Title</div>
+            </a>
+            <a href="https://drive.google.com/file/d/your_pdf_file_id_2/view?usp=sharing" class="preview" target="_blank">
+                <img src="path_to_preview_image2.jpg" alt="Preview of PDF 2">
+                <div class="preview-text">PDF 2 Title</div>
+            </a>
+            <a href="https://drive.google.com/file/d/your_pdf_file_id_3/view?usp=sharing" class="preview" target="_blank">
+                <img src="path_to_preview_image3.jpg" alt="Preview of PDF 3">
+                <div class="preview-text">PDF 3 Title</div>
+            </a>
+            <!-- Repeat the pattern for other items -->
+        </div>
     </div>
-
-    <script>
-        function showPDF(pdfId) {
-            var pdfs = document.getElementsByClassName('pdf-viewer');
-            for (var i = 0; i < pdfs.length; i++) {
-                pdfs[i].style.height = '0';
-            }
-            document.getElementById(pdfId).style.height = '600px';
-        }
-    </script>
 </body>
 </html>
